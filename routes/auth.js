@@ -30,9 +30,9 @@ router.post("/register", async (req, res) => {
 
   try {
     // 1. CAPTCHA validation
-  /*  const captchaResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${captcha}`, { method: "POST" });
+  const captchaResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${captcha}`, { method: "POST" });
     const captchaData = await captchaResponse.json();
-    if (!captchaData.success) return res.render("register", { error: "CAPTCHA failed" });*/
+    if (!captchaData.success) return res.render("register", { error: "CAPTCHA failed" });
 
     // 2. Password checks
     if (password !== confirmPassword) return res.render("register", { error: "Passwords do not match" });
@@ -109,7 +109,7 @@ router.post("/login", async (req, res) => {
 
    try {
    // 1️⃣ First: Check if captcha exists
- /*   if (!captcha) {
+   if (!captcha) {
       return res.render("login", { error: "Please complete CAPTCHA" });
     }
 
@@ -128,7 +128,7 @@ router.post("/login", async (req, res) => {
     if (!captchaVerify.data.success) {
       return res.render("login", { error: "CAPTCHA verification failed" });
     }
-    */
+    
     const user = await User.findOne({ email }).select("+password");
     if (!user) return res.render("login", { error: "User not found" });
 
