@@ -1,0 +1,114 @@
+body{
+background:linear-gradient(135deg,#0B0F19,#111827);
+color:white;
+font-family:Inter;
+margin:0;
+}
+
+.workspace{
+display:flex;
+height:75vh;
+}
+
+/* Sidebar */
+
+.file-sidebar{
+width:260px;
+background:rgba(255,255,255,0.04);
+backdrop-filter:blur(12px);
+border-right:1px solid rgba(255,255,255,0.08);
+padding:15px;
+overflow:auto;
+}
+
+.file-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.file-actions button{
+margin-left:5px;
+background:#6366F1;
+border:none;
+padding:5px 10px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+#fileTree{
+list-style:none;
+padding-left:10px;
+}
+
+#fileTree li{
+padding:5px;
+cursor:pointer;
+}
+
+#fileTree li:hover{
+background:rgba(255,255,255,0.08);
+border-radius:6px;
+}
+
+/* Editor */
+
+.editor-section{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.editor-topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px;
+background:rgba(255,255,255,0.04);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.editor-topbar button{
+background:#6366F1;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+#codeEditor{
+flex:1;
+background:#111827;
+border:none;
+outline:none;
+color:white;
+padding:20px;
+font-family:monospace;
+font-size:14px;
+}
+
+/* Terminal */
+
+.terminal{
+height:200px;
+background:black;
+color:#00ff00;
+font-family:monospace;
+padding:10px;
+}
+
+#terminalOutput{
+height:140px;
+overflow:auto;
+}
+
+#terminalInput{
+width:100%;
+background:black;
+border:none;
+color:white;
+outline:none;
+}

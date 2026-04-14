@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | YourSaaS</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome Back</h2>
+    <% if(error){ %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form method="POST" action="/login">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <div class="g-recaptcha" data-sitekey="6LcYxX8sAAAAAFlFYOrEDyNbUmDFrjOH3SetrMyB"></div>
+      <button type="submit" class="btn-filled">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/register">Sign Up</a></p>
+ 
+  <div class="divider">
+    <span>OR</span>
+  </div>
+  
+  <a href="/auth/google" class="google-login-btn">
+    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+    <span>Continue with Google</span>
+  </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Projects</title>
+
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/projects.css">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+<%- include("partials/sidebar") %>
+
+<div class="main-content">
+
+<div class="projects-header">
+
+<h1>Your Projects</h1>
+
+<button class="new-project-btn" id="newProjectBtn">
++ New Project
+</button>
+
+</div>
+
+
+<% if(projects.length === 0){ %>
+
+<div class="empty">
+
+<h2>No Projects Yet</h2>
+
+<p>Create your first project to start building.</p>
+
+<button class="create-btn" id="createFirstProject">
+Create Project
+</button>
+
+</div>
+
+<% } else { %>
+
+<div class="projects-grid">
+
+<% projects.forEach(project => { %>
+
+<div class="project-card">
+
+<h3><%= project.name %></h3>
+
+<p class="date">
+Created <%= project.createdAt.toDateString() %>
+</p>
+
+<div class="actions">
+
+<a href="/workspace/<%= project._id %>" class="open">
+Open
+</a>
+
+<button
+class="settings"
+data-id="<%= project._id %>"
+data-name="<%= project.name %>"
+data-desc="<%= project.description || '' %>"
+>
+Settings
+</button>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+<% } %>
+
+</div>
+
+
+<!-- CREATE PROJECT MODAL -->
+
+<div id="projectModal" class="modal">
+
+<div class="modal-card">
+
+<h2>Create New Project</h2>
+
+<input id="projectName" placeholder="Project Name">
+
+<textarea id="projectDesc" placeholder="Description (optional)"></textarea>
+
+<div class="modal-buttons">
+
+<button id="cancelModal">Cancel</button>
+
+<button id="saveProject">Save & Enter</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT SETTINGS MODAL -->
+
+<div id="settingsModal" class="modal">
+
+<div class="modal-card">
+
+<h2>Project Settings</h2>
+
+<input id="editName">
+
+<textarea id="editDesc"></textarea>
+
+<div class="modal-buttons">
+
+<button id="updateProject">Update</button>
+
+<button id="downloadProject">Download</button>
+
+<button id="shareProject">Share</button>
+
+<button id="closeSettings">Cancel</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="/js/sidebar.js"></script>
+<script src="/js/projects.js"></script>
+
+</body>
+</html>

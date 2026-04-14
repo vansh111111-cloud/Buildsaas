@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Create Project</title>
+
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/new-project.css">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+<%- include("partials/sidebar") %>
+
+<!-- LOADING SCREEN -->
+
+<div id="loader">
+
+<div class="loader-box">
+
+<div class="spinner"></div>
+
+<p>Preparing your workspace...</p>
+
+</div>
+
+</div>
+
+
+<!-- CREATE PROJECT MODAL -->
+
+<div id="projectModal" class="modal">
+
+<div class="modal-card">
+
+<h2>Create New Project</h2>
+
+<form action="/projects/new" method="POST">
+
+<label>Project Name</label>
+<input type="text" name="name" required>
+
+<label>Description</label>
+<textarea name="description"></textarea>
+
+<button type="submit" class="create-btn">
+Create Project
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="/js/sidebar.js"></script>
+<script src="/js/new-project.js"></script>
+
+</body>
+</html>

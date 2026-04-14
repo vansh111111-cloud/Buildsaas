@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Notifications</title>
+
+<link rel="stylesheet" href="/css/notifications.css">
+
+</head>
+
+<body>
+
+<h1>Notifications</h1>
+
+<div class="notification-container">
+
+<% if(invites.length === 0){ %>
+
+<p class="empty">No notifications</p>
+
+<% } %>
+
+<% invites.forEach(invite => { %>
+
+<div class="notification-card">
+
+<div class="notification-info">
+
+<h3>Project Invite</h3>
+
+<p>
+You have been invited to join
+<strong><%= invite.projectId.name %></strong>
+as <strong><%= invite.projectRole %></strong>
+</p>
+
+</div>
+
+<div class="notification-actions">
+
+<button
+class="accept-btn"
+onclick="respondToInvite('<%= invite.projectId._id %>','accepted')">
+
+Accept
+
+</button>
+
+<button
+class="decline-btn"
+onclick="respondToInvite('<%= invite.projectId._id %>','declined')">
+
+Decline
+
+</button>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+<script src="/js/notifications.js"></script>
+
+</body>
+
+</html>

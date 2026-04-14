@@ -1,0 +1,29 @@
+<div id="file-explorer">
+
+<h3>Project Files</h3>
+
+<ul id="file-list"></ul>
+
+</div>
+
+<script>
+
+fetch("/workspace/<%= project._id %>/files")
+.then(res => res.json())
+.then(files => {
+
+const fileList = document.getElementById("file-list")
+
+files.forEach(file => {
+
+const li = document.createElement("li")
+
+li.textContent = file.name
+
+fileList.appendChild(li)
+
+})
+
+})
+
+</script>

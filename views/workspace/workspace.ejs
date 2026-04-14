@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/workspace-files.css">
+
+<div class="workspace">
+
+    <div class="sidebar">
+
+        <button id="tab-files">Files</button>
+        <button id="tab-env">Environment</button>
+
+    </div>
+
+
+    <div class="file-panel">
+        <%- include("./file-explorer") %>
+        <%- include("./env-manager") %>
+    </div>
+
+
+    <div class="editor-panel">
+
+        <div id="editor"></div>
+
+        <button id="save-file">Save</button>
+
+    </div>
+
+
+    <div class="preview-panel">
+        <iframe id="preview"></iframe>
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+
+<script src="/js/file-manager.js"></script>
+<script src="/js/env-manager.js"></script>

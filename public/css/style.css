@@ -1,0 +1,241 @@
+/* ========================= BODY & BACKGROUND ========================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0B0F19, #111827);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+/* ========================= CARDS ========================= */
+.card, .auth-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 50px;
+  width: 400px;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+/* ========================= HEADINGS ========================= */
+.card h2, .auth-card h1 {
+  margin: 0 0 10px 0;
+}
+
+.auth-card h1 {
+  font-size: 36px;
+}
+
+.card h2 {
+  font-size: 28px;
+}
+
+.auth-card p, .card p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #d1d5db;
+}
+
+/* ========================= INPUTS ========================= */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+input::placeholder {
+  color: #d1d5db;
+}
+
+/* ========================= BUTTONS ========================= */
+button, .btn-filled, .btn-outline {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Filled button */
+.btn-filled, button {
+  border: none;
+  background: #6366F1;
+  color: white;
+}
+
+.btn-filled:hover, button:hover {
+  background: #4F46E5;
+}
+
+/* Outlined button (Login on auth page) */
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ========================= LINKS ========================= */
+a {
+  color: #3B82F6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= ERROR MESSAGES ========================= */
+p.error {
+  background: #7F1D1D;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+/* ================= OTP PAGE ================= */
+
+.card p {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #d1d5db;
+}
+
+input[name="otp"] {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.resend-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.password-rules {
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.password-rules p {
+  margin: 3px 0;
+}
+
+.valid {
+  color: #10B981; /* green */
+}
+
+.invalid {
+  color: #EF4444; /* red */
+}
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.password-rules {
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.password-rules p {
+  margin: 4px 0;
+  color: red;   /* default red */
+  transition: 0.3s;
+}
+
+.password-rules p.valid {
+  color: white; /* becomes white when valid */
+}
+.password-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+#confirmPassword {
+  border: 2px solid red; /* default red until matched */
+}
+
+.password-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.google-login-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:100%;
+padding:12px;
+border-radius:10px;
+background:#ffffff;
+color:#444;
+font-weight:500;
+text-decoration:none;
+border:1px solid #dadce0;
+transition:0.25s;
+}
+
+.google-login-btn img{
+width:20px;
+height:20px;
+}
+
+.google-login-btn:hover{
+background:#f7f7f7;
+}
+.divider{
+display:flex;
+align-items:center;
+text-align:center;
+margin:15px 0;
+color:#aaa;
+font-size:14px;
+}
+
+.divider::before,
+.divider::after{
+content:"";
+flex:1;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.divider span{
+margin:0 10px;
+}

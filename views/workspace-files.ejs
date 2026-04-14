@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Files</title>
+
+<link rel="stylesheet" href="/css/workspace-header.css">
+<link rel="stylesheet" href="/css/workspace-sidebar.css">
+<link rel="stylesheet" href="/css/workspace.css">
+<link rel="stylesheet" href="/css/workspace-files.css">
+
+</head>
+
+<body data-project-id="<%= project._id %>">
+
+<%- include("partials/workspace-header") %>
+<%- include("partials/workspace-sidebar") %>
+
+<div class="workspace">
+
+<!-- Sidebar File Explorer -->
+
+<aside class="file-sidebar">
+
+<div class="file-header">
+
+<h3>Explorer</h3>
+
+<div class="file-actions">
+<button id="newFileBtn">New File</button>
+<button id="newFolderBtn">New Folder</button>
+</div>
+
+</div>
+
+<ul id="fileTree"></ul>
+
+</aside>
+
+
+<!-- Editor Area -->
+
+<main class="editor-section">
+
+<div class="editor-topbar">
+
+<span id="currentFile">No file selected</span>
+
+<div>
+<button id="editBtn">Edit</button>
+<button id="saveBtn">Save</button>
+</div>
+
+</div>
+
+<textarea id="codeEditor" readonly></textarea>
+
+</main>
+
+</div>
+
+
+<!-- Terminal -->
+
+<div class="terminal">
+
+<div class="terminal-header">Terminal</div>
+
+<div id="terminalOutput"></div>
+
+<input id="terminalInput" placeholder="Type command..." />
+
+</div>
+
+
+<script>
+const projectId = "<%= project._id %>"
+</script>
+
+<link rel="stylesheet" href="/css/workspace-files.css">
+<script src="/js/workspace-files.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | YourSaaS</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Google reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Create Account</h2>
+    <p>Start building your full-stack website.</p>
+
+    <% if(error){ %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form method="POST" action="/register">
+      
+      <input type="text" name="fullName" placeholder="Full Name" required>
+
+      <input type="email" name="email" placeholder="Email Address" required>
+
+       <div class="password-wrapper">
+         <input type="password" id="password" name="password" placeholder="Password" required>
+         <span class="toggle-password" id="togglePass">👁️</span>
+       </div>
+      
+      <div class="password-rules">
+        <p id="lower">• A-</p>
+        <p id="upper">• a</p>
+        <p id="number">• 123...</p>
+        <p id="symbol">• #@_...</p>
+        <p id="length">• Minimum 6 characters</p>
+      </div>
+      
+      <!-- NEW: Confirm Password -->
+     
+    <div class="password-wrapper">
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+      <span class="toggle-password" id="toggleConfirm">👁️</span>
+    </div>
+      <!-- NEW: Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LcYxX8sAAAAAFlFYOrEDyNbUmDFrjOH3SetrMyB"></div>
+
+      <button type="submit" class="btn-filled">Create Account</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+  
+  <div class="divider">
+    <span>OR</span>
+  </div>
+  
+  <a href="/auth/google" class="google-login-btn">
+    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+    <span>Continue with Google</span>
+  </a>
+</div>
+  <script>
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirmPassword");
+  
+  // Rule elements
+  const lower = document.getElementById("lower");
+  const upper = document.getElementById("upper");
+  const number = document.getElementById("number");
+  const symbol = document.getElementById("symbol");
+  const length = document.getElementById("length");
+  
+  // PASSWORD VALIDATION
+  password.addEventListener("input", function () {
+    const value = password.value;
+  
+    lower.classList.toggle("valid", /[a-z]/.test(value));
+    upper.classList.toggle("valid", /[A-Z]/.test(value));
+    number.classList.toggle("valid", /\d/.test(value));
+    symbol.classList.toggle("valid", /[@$!%*?&]/.test(value));
+    length.classList.toggle("valid", value.length >= 6);
+  
+    checkConfirmPassword();
+  });
+  
+  // CONFIRM PASSWORD CHECK
+  confirmPassword.addEventListener("input", checkConfirmPassword);
+  
+  function checkConfirmPassword() {
+    if (confirmPassword.value === "") {
+      confirmPassword.style.border = "2px solid red";
+      return;
+    }
+  
+    if (confirmPassword.value !== password.value) {
+      confirmPassword.style.border = "2px solid red";
+    } else {
+      confirmPassword.style.border = "2px solid #ccc";
+    }
+  }
+  
+  // 👁️ TOGGLE PASSWORD VISIBILITY
+  document.getElementById("togglePass").addEventListener("click", function () {
+    if (password.type === "password") {
+      password.type = "text";
+      this.textContent = "🙈"; // open eye
+    } else {
+      password.type = "password";
+      this.textContent = "👁️"; // closed eye
+    }
+  });
+  
+  document.getElementById("toggleConfirm").addEventListener("click", function () {
+    if (confirmPassword.type === "password") {
+      confirmPassword.type = "text";
+      this.textContent = "🙈";
+    } else {
+      confirmPassword.type = "password";
+      this.textContent = "👁️";
+    }
+  });
+  </script>
+</body>
+</html>

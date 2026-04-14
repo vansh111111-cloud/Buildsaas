@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Plugins</title>
+
+<link rel="stylesheet" href="/css/workspace-plugins.css">
+
+</head>
+<body>
+
+<div class="workspace-container">
+
+<aside class="editor-sidebar">
+
+<div class="sidebar-logo">
+BuildSaaS
+</div>
+
+<nav class="sidebar-menu">
+
+<a href="/workspace/<%= project._id %>/files">Files</a>
+<a href="/workspace/<%= project._id %>/environment">Environment</a>
+<a href="/workspace/<%= project._id %>/pages">Pages</a>
+<a href="/workspace/<%= project._id %>/templates">Templates</a>
+<a href="/workspace/<%= project._id %>/plugins" class="active">Plugins</a>
+<a href="/workspace/<%= project._id %>/settings">Settings</a>
+
+</nav>
+
+</aside>
+
+
+<main class="editor-main">
+
+<h1 class="page-title">Plugin Marketplace</h1>
+
+<div class="plugin-grid" id="plugin-grid"></div>
+
+</main>
+
+</div>
+
+
+<script src="/js/workspace-plugins.js"></script>
+
+<script>
+
+const PROJECT_ID = "<%= project._id %>"
+
+</script>
+
+</body>
+</html>

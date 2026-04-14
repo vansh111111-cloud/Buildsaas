@@ -1,0 +1,61 @@
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+padding:40px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+.notification-container{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.notification-card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.notification-info h3{
+margin:0;
+}
+
+.notification-info p{
+margin:5px 0 0 0;
+color:#cbd5f5;
+}
+
+.notification-actions{
+display:flex;
+gap:10px;
+}
+
+.accept-btn{
+background:#22c55e;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+color:white;
+}
+
+.decline-btn{
+background:#ef4444;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+color:white;
+}
+
+.empty{
+color:#94a3b8;
+}

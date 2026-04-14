@@ -1,0 +1,103 @@
+body{
+background:linear-gradient(135deg,#0B0F19,#111827);
+color:white;
+font-family:Inter;
+margin:0;
+}
+
+/* layout */
+
+.workspace{
+display:flex;
+height:100vh;
+}
+
+/* sidebar */
+
+.sidebar{
+width:240px;
+background:rgba(255,255,255,0.04);
+backdrop-filter:blur(10px);
+padding:20px;
+border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+margin:15px 0;
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+}
+
+.sidebar .active{
+font-weight:bold;
+color:#6366F1;
+}
+
+
+/* plugin page */
+
+.editor-main{
+flex:1;
+padding:30px;
+overflow:auto;
+}
+
+.plugin-header{
+margin-bottom:25px;
+}
+
+
+/* plugin grid */
+
+.plugin-cards{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:20px;
+}
+
+
+/* plugin card */
+
+.plugin-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(8px);
+padding:20px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.2s;
+}
+
+.plugin-card:hover{
+transform:translateY(-5px);
+}
+
+.plugin-card h3{
+margin-top:0;
+}
+
+.plugin-card p{
+font-size:14px;
+opacity:0.8;
+}
+
+.plugin-card button{
+margin-top:10px;
+padding:8px 14px;
+border:none;
+border-radius:8px;
+background:#6366F1;
+color:white;
+cursor:pointer;
+}
+
+.plugin-card button:hover{
+background:#4F46E5;
+}

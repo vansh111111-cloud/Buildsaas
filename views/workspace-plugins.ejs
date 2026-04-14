@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plugins</title>
+  <link rel="stylesheet" href="/css/workspace-header.css">
+  <link rel="stylesheet" href="/css/workspace-sidebar.css">
+  <link rel="stylesheet" href="/css/workspace.css">
+  <link rel="stylesheet" href="/css/workspace-plugins.css">
+</head>
+<body data-project-id="<%= project._id %>">
+
+<%- include("partials/workspace-header") %>
+<%- include("partials/workspace-sidebar") %>
+
+<div class="workspace">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- your sidebar items -->
+  </aside>
+
+  <!-- Main Plugin Area -->
+  <main class="editor-main plugins-main">
+
+    <div class="plugin-header">
+      <h2>Available Plugins</h2>
+    </div>
+
+    <!-- Plugin Grid -->
+    <div id="plugin-grid" class="plugin-cards"></div>
+
+  </main>
+
+</div>
+
+<!-- Modal for installing plugin -->
+<div id="plugin-modal" class="plugin-modal">
+  <div class="modal-content">
+    <h3 id="modal-title"></h3>
+    <p id="modal-text">Do you want to install this plugin?</p>
+
+    <!-- Loading animation -->
+    <div id="loading" style="display:none; margin:10px auto;">
+      <div class="spinner"></div>
+      <p>Installing...</p>
+    </div>
+
+    <div class="modal-actions">
+      <button id="cancel-btn">Cancel</button>
+      <button id="confirm-btn">Install</button>
+    </div>
+  </div>
+</div>
+
+<script>
+window.PROJECT_ID = "<%= project._id %>";
+</script>
+
+
+<script src="/js/workspace-plugins.js"></script>
+<!-- Project ID for JS -->
+
+<!-- JS for plugin cards, modal, and installation -->
+
+
+</body>
+</html>

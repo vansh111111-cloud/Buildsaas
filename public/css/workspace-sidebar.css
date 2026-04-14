@@ -1,0 +1,135 @@
+/* WORKSPACE SIDEBAR */
+
+.editor-sidebar{
+
+position:fixed;
+
+top:60px;
+
+left:0;
+
+width:190px;
+
+height:calc(100vh - 60px);
+
+background:#020617;
+
+border-right:1px solid rgba(255,255,255,0.06);
+
+padding:18px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+
+
+/* LOGO */
+
+.sidebar-logo{
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:22px;
+
+opacity:0.9;
+
+}
+
+
+
+/* MENU */
+
+.sidebar-menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:6px;
+
+}
+
+
+
+/* LINKS */
+
+.sidebar-menu a{
+
+text-decoration:none;
+
+color:#CBD5F5;
+
+padding:8px 10px;
+
+border-radius:8px;
+
+font-size:13px;
+
+transition:0.2s;
+
+}
+
+
+
+/* HOVER */
+
+.sidebar-menu a:hover{
+
+background:rgba(99,102,241,0.12);
+
+color:white;
+
+}
+
+
+
+/* ACTIVE */
+
+.sidebar-menu a.active{
+
+background:rgba(99,102,241,0.18);
+
+color:#6366F1;
+
+}
+/* FILE EXPLORER */
+.file-explorer {
+  flex: 1;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.explorer-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+.explorer-actions button {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#file-tree {
+  list-style: none;
+  padding: 10px;
+}
+
+#file-tree li {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#file-tree li:hover {
+  background: rgba(255,255,255,0.05);
+}
