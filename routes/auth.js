@@ -105,7 +105,7 @@ router.post("/verify-otp", async (req, res) => {
 
 // ================= LOGIN POST =================
 router.post("/login", async (req, res) => {
-  const { email, password /* "g-recaptcha-response": captcha*/  } = req.body;
+  const { email, password ,"g-recaptcha-response": captcha } = req.body;
 
    try {
    // 1️⃣ First: Check if captcha exists
