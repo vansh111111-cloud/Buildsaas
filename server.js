@@ -27,7 +27,7 @@ Object.defineProperty(express.request, "query", {
 configurable: true,
 writable: true
 });
-
+app.set("trust proxy", 1);
 app.use(morgan("dev"));
 app.use(errorHandler);
 
