@@ -57,7 +57,8 @@ app.set("views", path.join(__dirname, "views"));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Atlas Connected"))
   .catch((err) => console.log("❌ DB Error:", err));
-
+console.log("ENV TEST:", process.env.MONGO_URI);
+console.log("ENV TEST:", process.env.SESSION_SECRET);
 // ================= ROUTES =================
 
 
